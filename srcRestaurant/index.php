@@ -32,7 +32,7 @@
                     <br><br>
                 </form>
                 <div id="formFooter">
-                    <a type="button" class="underlineHover" data-toggle="modal" data-target="#myModalLogin">Esqueceu a senha?</a>
+                    <a type="button" class="underlineHover" onclick="window.location = 'pageRestaurant.php' <!-- data-toggle="modal" data-target="#myModalLogin"-->>Esqueceu a senha?</a>
                 </div>
                 <div id="myModalLogin" class="modal fade" role="dialog">
 					<div class="modal-dialog">
