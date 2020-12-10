@@ -23,7 +23,7 @@
         
         <div class="loginContainer">
             <div id="formContent">
-                <form action="/TCC-Rodizeira/srcRestaurant/pageRestaurant.php" method="POST">
+                <form action="/pageRestaurant.php" method="POST">
                     <br>
                     <input type="text" id="login" name="login" placeholder="Username" autocomplete="off">
                     <input type="password" id="password" name="password" placeholder="Senha">
