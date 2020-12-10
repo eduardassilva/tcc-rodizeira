@@ -1,0 +1,88 @@
+#rodiziosDiv{
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.rodizio{
+	display:block;
+    border: 2px solid var(--black-color);
+	animation: fadeEffect 2s;
+	width: 100%;
+	height: 180px;
+}
+
+.rodizioName{
+	/*border: 1px solid black;*/
+	width:30%;
+	height:6%;
+	position: absolute;
+	display:inline-block;
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-top:10px;
+	padding-left:10px;
+	font-size:32px;
+	word-break: break-all;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.rodizioPrice{
+	/*border: 1px solid black;*/
+	width:15%;
+	height:6%;
+	position: absolute;
+	display:inline;
+	margin-top: 8px;
+	margin-left: 35%;
+	padding-top:10px;
+	padding-left:10px;
+	font-size:32px;
+	word-break: break-all;
+	float: right;
+	overflow:auto;
+	font-size: 20px;
+}
+
+.rodizioTags{
+	margin:8px 8px;
+	border: 1px solid var(--black-color);
+	height:90%;
+	width:30%;
+	float: right;
+	padding-left:5px;
+	padding-top:5px;
+	overflow:auto;
+	font-weight: bold;
+}
+
+.tagsRodizio{
+    white-space: pre-line;
+}
+
+.rodizioDesc{
+	border-top:0.5px solid gray;
+	height:50%;
+	margin-top:78px;
+	margin-left:8px;
+	margin-bottom:8px;
+	overflow:auto;
+	word-break: break-word;
+	padding: 5px 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+.imgCardapioTag{
+	width: 15px;
+}

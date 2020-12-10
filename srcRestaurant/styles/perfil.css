@@ -1,0 +1,208 @@
+#perfilSelection{
+	background-color: var(--white-color);
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.perfilContainer{
+	display: inline-block;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	width: 32%;
+	vertical-align: top;
+	text-align: center;
+}
+
+.left{
+	overflow:hidden;
+}
+
+.central{
+	border-right: 1px solid; 
+	border-left: 1px solid;
+	border-image: radial-gradient(rgb(204,204,204), rgb(255,255,255)) 80;
+}
+
+.perfilContainer h3{
+	display: block;
+	color: var(--main-color);
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.perfilContainer label{
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.perfilContainer input{
+	width: 100%;
+}
+
+.logoImage{
+	width:50px;
+	margin-left:2.5rem;
+	margin-bottom:7px;
+}
+
+.perfilContainer p{
+	text-align: left;
+	margin-bottom: -1px;
+}
+
+#logoImageInput{
+	width: 355px;
+}
+
+#perfilButton{
+    float:right;
+    margin-top: 100px;
+	margin-right: 10px;
+	position: relative;
+}
+
+
+.errorInput{
+	border-color:red;
+	outline-color:red;
+}
+
+.observationInput{
+	font-size: 10px;
+	font-style: italic;
+}
+
+
+#divPerfil h3{
+	display: inline-block;
+}
+
+#perfilAlt{
+	margin-left: 50px;
+	
+}
+
+.perfil:hover{
+	cursor:pointer;
+	text-decoration: underline;
+	
+}
+
+.activePerfil{
+	pointer-events:none;
+	border-bottom: 3px solid var(--main-color);
+}
+
+#configSelection{
+	background-color: var(--white-color);
+	margin-right: auto;
+	margin-left: 5%;
+}
+
+.configContainer{
+	display: inline-block;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	vertical-align: top;
+	text-align: center;
+}
+
+.configContainer h3{
+	display: block;
+	color: var(--main-color);
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.configContainer label{
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.configContainer input{
+	width: 100%;
+}
+
+.configContainer p{
+	text-align: left;
+	margin-bottom: -1px;
+}
+
+.configLogin{
+	margin-left: 12%;
+}
+
+#configButton{
+	float:right;
+	margin-top: 225px;
+	margin-right: 10px;
+	position: relative;
+
+}
+
+@media screen and (min-width: 700px){
+	.configSenha{
+		border-left: 1px solid;
+		border-image: radial-gradient(rgb(204,204,204), rgb(255,255,255)) 80;
+		margin-left: 8%;
+		padding-left: 5%;
+
+	}	
+}
+
+@media screen and (max-width: 700px){
+	#perfilSelection{
+		display: inline-block;
+		background-color: var(--white-color);
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.perfilContainer{
+		display: inline-block;
+		padding-top: 30px;
+		padding-bottom: 50px;
+		width: 100%;
+	}
+
+	.central{
+		border-bottom: 1px solid var(--border-color);
+		border-top: 1px solid var(--border-color);
+		border-left: 0;
+		border-right: 0;
+    }
+    
+    #perfilButton{
+        float:right;
+        margin-top: 0;
+        margin-right: 0;
+	}
+	
+	.configContainer{
+		display: inline-block;
+		padding-top: 30px;
+		padding-bottom: 50px;
+		width: 70%;
+	}
+
+	#configSelection{
+		display: inline-block;
+		background-color: var(--white-color);
+		margin-left: auto;
+	}
+
+	.configSenha{
+		border-top: 1px solid var(--border-color);
+		margin-left: 12%;
+	}
+
+	#configButton{
+		float:right;
+        margin-top: 0;
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+}

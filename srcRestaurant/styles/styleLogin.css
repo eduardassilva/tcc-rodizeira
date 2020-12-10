@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/*navBar*/
+.navBar{
+	background-color: var(--navBar-color);
+	border-top: 10px solid var(--main-color);
+	position: fixed;
+	top: 0;
+	right: 0;
+    left: 0;
+    z-index: 1030;
+    display: inline-block;
+}
+
+.navBar p{
+	text-align: center;
+	color: var(--navBar-font-color);
+	padding: 12px;
+	font-size: 24px;
+    margin-bottom: 0px;
+}
+
+/*.logoImage{
+	width:50px;
+	margin-left:2.5rem;
+    margin-bottom:7px;
+    text-align: center;
+}*/
+
+/* Login */
+  
+.loginContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    margin-top: 15%; /*12% se tiver esqueceu a senha*/
+}
+
+#formContent{
+    border-radius: 10px 10px 10px 10px;
+    background: var(--white-color);
+    width: 450px;
+    position: relative;
+    box-shadow: 0 15px 30px 0 rgba(63, 63, 63, 0.3);
+    text-align: center;
+}
+
+#formFooter{
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+}
+
+input[type=text],[type=password]{
+    background-color: #f6f6f69f;
+    color: var(--black-color);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    border-radius: 5px;
+}
+
+#submit{
+    background-color: var(--green-color);    
+    color: var(--white-color);
+    font-size: 18px;
+    padding: 10px 80px;
+}
+
+/*footer*/
+footer{
+    color: var(--black-color);
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 700px){
+	.navBar p{
+		margin-left: 0rem;
+	}
+
+	/*.navBar #icon{
+		float: right;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;	
+		padding: 22px 20px;
+    }*/
+
+	footer{
+		font-size: 10px;
+    }
+    
+    .loginContainer{
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 80px;
+    }
+
+    #formContent{
+        max-width: 350px;
+    }
+}
+
