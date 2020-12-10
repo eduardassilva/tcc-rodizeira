@@ -34,7 +34,7 @@ function NewItemCardapio(){
 
 		itemQty++;
         
-        InsertCardapios(nameItem, descItem, imageItem, selectedTagsString);
+      /*InsertCardapios(nameItem, descItem, imageItem, selectedTagsString);*/
         ClearInputsCardapio(nameItem, descItem, imageItem, selectedTags);
 	}
 }

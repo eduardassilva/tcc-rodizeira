@@ -31,7 +31,7 @@ function NewRodizio(){
         
 		CreateDivRodizio(nameRodizio.value, priceRodizio.value, descRodizio.value, selectedTagsString);
         
-        InsertRodizios(nameRodizio, priceRodizio, descRodizio, selectedTagsString);
+        /*InsertRodizios(nameRodizio, priceRodizio, descRodizio, selectedTagsString);*/
         
 		ClearInputsRodizio(nameRodizio, priceRodizio, descRodizio, selectedTags);
 	}

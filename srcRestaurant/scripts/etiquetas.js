@@ -16,7 +16,7 @@ function NewEtiqueta(){
 
 		itemQty++;
         
-        InsertEtiqueta(nameTag);
+        /*InsertEtiqueta(nameTag);*/
         ClearInputsEtiquetas(nameTag);
 	}
 }

@@ -1,4 +1,4 @@
-var restaurantNamePerfil, logoImagePerfil, telefonePerfil, emailPerfil, novaSenhaPerfil, confirmarSenhaPerfil, cepPerfil, estadoPerfil, cidadePerfil, enderecoPerfil;
+var restaurantNamePerfil, logoImagePerfil, telefonePerfil, emailPerfil, usernamePerfil, senhaUsernamePerfil, senhaAntigaPerfil, novaSenhaPerfil, confirmarSenhaPerfil, cepPerfil, estadoPerfil, cidadePerfil, enderecoPerfil;
 var newName, newTelefone, newEmail, newCep, newEstado, newCidade, newEndereco;
 
 /*Abre as sub-abas do Perfil*/
@@ -16,6 +16,9 @@ function GetInputsValues(){
 	logoImageInput = document.getElementById("logoImageInput");
 	telefonePerfil = document.getElementById("telefoneInput");
 	emailPerfil = document.getElementById("emailInput");
+    usernamePerfil = document.getElementById("userInput");
+    senhaUsernamePerfil =  document.getElementById("senhaUser");
+    senhaAntigaPerfil = document.getElementById("senhaAntiga");
 	novaSenhaPerfil = document.getElementById("novaSenhaInput");
 	confirmarSenhaPerfil = document.getElementById("confirmarSenhaInput");
 	cepPerfil = document.getElementById("cepInput");
@@ -123,17 +126,67 @@ function SavePerfilChanges(){
 		
 		ClearPerfilInputs();	
 		
-		if(confirmarSenhaPerfil.className == 'errorInput'){
-			confirmarSenhaPerfil.className = '';
-			document.getElementById('confirmarSenhaLabel').innerHTML = document.getElementById('confirmarSenhaLabel').innerHTML.replace(' *', '');
-		}
-        
         $.ajax({                                      
             url: '/TCC-Rodizeira/srcRestaurant/php/updatePerfil.php',       
             type: "POST",
             data: {resID: restaurant_id, newName: newName, newTelefone: newTelefone, newEmail: newEmail, newCep: newCep, newEstado: newEstado, newCidade: newCidade, newEndereco: newEndereco} 
         });
 	}
+}
+
+function SaveLoginChanges(){
+    
+    usernamePerfil
+    senhaUsernamePerfil
+    senhaAntigaPerfil
+    novaSenhaPerfil
+    confirmarSenhaPerfil
+    
+    if(usernamePerfil.value != ''){
+        if(senhaUsernamePerfil.value != ''){
+            $.ajax({                                      
+                url: '/TCC-Rodizeira/srcRestaurant/php/updateLoginInfo.php',       
+                type: "POST",
+                data: {resID: restaurant_id, newUser: usernamePerfil.value, passUser: senhaUsernamePerfil.value, oldPass: '', newPass: ''},
+                success: function() {
+                    alert('Usuário alterado com sucesso!');
+                }
+            });
+        }
+        else
+            alert('Para trocar o nome de usuário, insira a senha!');
+    }
+    
+    if(senhaAntigaPerfil.value != '' 
+    || novaSenhaPerfil.value != '' 
+    || confirmarSenhaPerfil.value != ''){
+        
+        if(senhaAntigaPerfil.value == '' 
+        || novaSenhaPerfil.value == '' 
+        || confirmarSenhaPerfil.value == ''){
+            alert('Para trocar a senha, preencha os campos "Senha antiga", "Nova senha" e "Confirmar nova senha"');
+        }
+        else{
+            if(novaSenhaPerfil.value == confirmarSenhaPerfil.value){
+                $.ajax({                                      
+                    url: '/TCC-Rodizeira/srcRestaurant/php/updateLoginInfo.php',       
+                    type: "POST",
+                    data: {resID: restaurant_id, newUser: '', passUser: '', oldPass: senhaAntigaPerfil.value, newPass: novaSenhaPerfil.value},
+                    success: function() {
+                        alert('Senha alterada com sucesso!');
+                    }
+                });   
+            }
+            else
+                alert('As senhas não coincidem!');
+        }
+    }
+    
+    ClearPerfilInputs();
+    /*if(confirmarSenhaPerfil.className == 'errorInput'){
+		confirmarSenhaPerfil.className = '';
+		document.getElementById('confirmarSenhaLabel').innerHTML = document.getElementById('confirmarSenhaLabel').innerHTML.replace(' *', '');
+	}*/
 }
 
 function TelefoneValidation(inputTelefone){
@@ -198,6 +251,9 @@ function ClearPerfilInputs(){
 	estadoPerfil.value = '';
 	cidadePerfil.value = '';
 	enderecoPerfil.value = '';
+    usernamePerfil.value = '';
+    senhaUsernamePerfil.value = '';
+    senhaAntigaPerfil.value = '';
 }
 
 function readURLLogo(input, isPreview) {

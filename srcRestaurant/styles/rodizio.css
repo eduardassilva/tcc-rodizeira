@@ -35,14 +35,12 @@
 	height:6%;
 	position: absolute;
 	display:inline;
-	margin-top: 8px;
+	margin-top: 5px;
 	margin-left: 35%;
 	padding-top:10px;
 	padding-left:10px;
-	font-size:32px;
 	word-break: break-all;
 	float: right;
-	overflow:auto;
 	font-size: 20px;
 }
 
@@ -85,4 +83,8 @@ input[type=number] {
 
 .imgCardapioTag{
 	width: 15px;
+}
+
+.tagLabel label{
+	margin-left: 2px;
 }
