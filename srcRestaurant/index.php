@@ -23,16 +23,16 @@
         
         <div class="loginContainer">
             <div id="formContent">
-                <form action="/TCC-Rodizeira/srcRestaurant/php/loginValidation.php" method="POST">
+                <form action="/TCC-Rodizeira/srcRestaurant/pageRestaurant.php" method="POST">
                     <br>
                     <input type="text" id="login" name="login" placeholder="Username" autocomplete="off">
                     <input type="password" id="password" name="password" placeholder="Senha">
                     <br><br>
-                    <button id="submit" class="btn btn-lg" onclick="window.location = 'pageRestaurant.php'">Entrar</button>
+                    <button id="submit" class="btn btn-lg">Entrar</button>
                     <br><br>
                 </form>
                 <div id="formFooter">
-                    <a type="button" class="underlineHover"  <!-- data-toggle="modal" data-target="#myModalLogin"-->>Esqueceu a senha?</a>
+                    <a type="button" class="underlineHover"  data-toggle="modal" data-target="#myModalLogin">Esqueceu a senha?</a>
                 </div>
                 <div id="myModalLogin" class="modal fade" role="dialog">
 					<div class="modal-dialog">
