@@ -2,6 +2,8 @@
 <html lang="en">
     <head>
 		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" href="styles/variables.css"/>
 		<link rel="stylesheet" href="styles/styleRestaurant.css"/>
 		<link rel="stylesheet" href="styles/hamburgers.css"/>
@@ -9,8 +11,6 @@
 		<link rel="stylesheet" href="styles/perfil.css"/>
 		<link rel="stylesheet" href="styles/rodizio.css"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<script src="scripts/main.js"></script><script src="scripts/inicio.js"></script><script src="scripts/pedidos.js"></script>
 		<script src="scripts/cardapio.js"></script><script src="scripts/perfil.js"></script><script src="scripts/rodizio.js"></script><script src="scripts/etiquetas.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -21,14 +21,14 @@
     <body background="img/bg1.png" onload="StartPage()">
 		<div id=nav>
 			<div class="navBar" id="navBarID">
-				<img id="logoRestaurant" src="img/mcLogo.png" class="logoImage" alt="Missing Logo" style="color:white"></img>
+				<img id="logoRestaurant" src="img/llLogo.png" class="logoImage" alt="Missing Logo" style="color:white"></img>
 				<p class="navHeader" id="restaurantName">Luda Lanches</p>
 				<section class="navDiv">
-					<a class="navButton" onclick="OpenTab(event, 'navInicio')">Início</a>
+					<a class="navButton" onclick="OpenTab(event, 'navInicio')" id="defaultOpen">Início</a>
 					<a class="navButton" onclick="OpenTab(event, 'navPedidos')">Pedidos</a>
 					<a class="navButton" onclick="OpenTab(event, 'navRodizio')">Rodízio</a>
 					<a class="navButton" onclick="OpenTab(event, 'navCardapio')">Cardápio</a>
-					<a class="navButton" onclick="OpenTab(event, 'navPerfil')" id="defaultOpen">Perfil</a>					
+					<a class="navButton" onclick="OpenTab(event, 'navPerfil')">Perfil</a>					
 				</section>
 				<button class="hamburger hamburger--squeeze" onclick="OpenNavMobile()" id="icon" type="button">
 					<span class="hamburger-box">
@@ -52,28 +52,7 @@
 					Adicionar
 				</button>
 				<div class="line"></div>
-				<div id="rodiziosDiv">
-					<!--<div class="rodizio">
-						<div class="rodizioPrice">11.11</div>
-						<div class="rodizioName">hdhsfds</div>
-						<div class="rodizioTags">
-							<label>
-								<img src="img/tagred.png" class="imgCardapioTag">
-								Exemplo 5 
-							</label>
-							<br>
-							<label>
-								<img src="img/tagred.png" class="imgCardapioTag">
-								Exemplo 6   
-							</label> 
-							<br>
-							<p># Exemplo 5</p> 
-							<p># Exemplo 6</p>
-						</div>
-						
-						<div class="rodizioDesc">dhhsdhfksdjhfksdhkdshf</div>
-					</div>-->
-				</div>
+				<div id="rodiziosDiv"></div>
                 
                 <!-- Modal -->
 				<div id="modalRodizio" class="modal fade" role="dialog">
@@ -96,40 +75,7 @@
 								</label><br><br>
 								<label>Selecione as tags: </label>
 								<br>
-								<div id="divTagRodizio" class="divTagRodizio">
-									<!--<label for="tagRodizio1">
-										<input type="checkbox" id="tagRodizio1" class="tagCardapio" autocomplete="off">
-										Exemplo 1   
-									</label>
-									<label for="tagRodizio2">
-										<input type="checkbox" id="tagRodizio2" class="tagCardapio" autocomplete="off">
-										Exemplo 2   
-									</label> 
-									<label for="tagRodizio3">
-										<input type="checkbox" id="tagRodizio3" class="tagCardapio" autocomplete="off">
-										Exemplo 3   
-									</label>
-									<label for="tagRodizio4">
-										<input type="checkbox" id="tagRodizio4" class="tagCardapio" autocomplete="off">
-										Exemplo 4   
-									</label> 
-									<label for="tagRodizio5">
-										<input type="checkbox" id="tagRodizio5" class="tagCardapio" autocomplete="off">
-										Exemplo 5   
-									</label>
-									<label for="tagRodizio6">
-										<input type="checkbox" id="tagRodizio6" class="tagCardapio" autocomplete="off">
-										Exemplo 6   
-									</label> 
-									<label for="tagRodizio7">
-										<input type="checkbox" id="tagRodizio7" class="tagCardapio" autocomplete="off">
-										Exemplo 7   
-									</label>
-									<label for="tagRodizio8">
-										<input type="checkbox" id="tagRodizio8" class="tagCardapio" autocomplete="off">
-										Exemplo 8   
-									</label> -->
-								</div>
+								<div id="divTagRodizio" class="divTagRodizio"></div>
 								
 							</div>
 							<div class="modal-footer">
@@ -159,28 +105,7 @@
 				
 				<div class="line"></div>
 				
-				<div id="itemsCardapio">
-					<!--<div class="cardapioItemDiv">
-						<div class="cardapioImg"></div>
-						<div class="cardapioName">
-							<p>dsfsdf</p>
-						</div>
-						<div class="cardapioDescDiv">
-							<p>hdsugdsgfjcvbkuidsgfjsdhfbvjvcdsvfksdhbdnjsvfikufjhd</p>
-							<p>hdsugdsgfjcvbkuidsgfjsdhfbvjvcdsvfksdhbdnjsvfikufjhd</p>
-							<p>hdsugdsgfjcvbkuidsgfjsdhfbvjvcdsvfksdhbdnjsvfikufjhd</p>
-							<p>hdsugdsgfjcvbkuidsgfjsdhfbvjvcdsvfksdhbdnjsvfikufjhd</p>
-						</div>
-						<div class="cardapioTag">
-							<label for="tagCardapio5">
-								#Exemplo 5, 
-							</label>
-							<label for="tagCardapio6">
-								#Exemplo 6   
-							</label> 
-						</div>
-					</div>-->
-				</div>
+				<div id="itemsCardapio"></div>
 
 				<!-- Modal -->
 				<div id="myModal" class="modal fade" role="dialog">
@@ -206,38 +131,6 @@
 								<label>Selecione as etiquetas: </label>
 								<br>
 								<div id="divTagCardapio" class="divTagCardapio">
-									<!--<label for="tagCardapio1">
-										<input type="checkbox" id="tagCardapio1" class="tagCardapio">
-										Exemplo 1   
-									</label>
-									<label for="tagCardapio2">
-										<input type="checkbox" id="tagCardapio2" class="tagCardapio">
-										Exemplo 2   
-									</label> 
-									<label for="tagCardapio3">
-										<input type="checkbox" id="tagCardapio3" class="tagCardapio">
-										Exemplo 3   
-									</label>
-									<label for="tagCardapio4">
-										<input type="checkbox" id="tagCardapio4" class="tagCardapio">
-										Exemplo 4   
-									</label> 
-									<label for="tagCardapio5">
-										<input type="checkbox" id="tagCardapio5" class="tagCardapio">
-										Exemplo 5  
-									</label>
-									<label for="tagCardapio6">
-										<input type="checkbox" id="tagCardapio6" class="tagCardapio">
-										Exemplo 6   
-									</label> 
-									<label for="tagCardapio7">
-										<input type="checkbox" id="tagCardapio7" class="tagCardapio">
-										Exemplo 7   
-									</label>
-									<label for="tagCardapio8">
-										<input type="checkbox" id="tagCardapio8" class="tagCardapio">
-										Exemplo 8   
-									</label>-->
 								</div>
 								
 							</div>
@@ -290,7 +183,7 @@
 			<div id="navPerfil" class="tabContent">
 				<div id="divPerfil"> 
 					<h3 class="perfil activePerfil">Perfil</h3>
-					<h3 class="perfil" id="perfilAlt" onclick="OpenSubTab(event, 'perfilConfig')">Alterar dados de login</h3>
+					<h3 class="perfil" id="perfilAlt" onclick="OpenSubTab(event, 'perfilConfig')">Login</h3>
 				</div>
 				
 				<div class="line"></div>
@@ -300,7 +193,7 @@
 						<h3>Informações gerais</h3>
 						<br><br>
 						<label>
-							<p>Nome do Restaurante</p><input type="text" id="restaurantNameInput" maxlength="40" size="40" autocomplete="off"/>
+							<p>Nome do Restaurante</p><input type="text" id="restaurantNameInput" placeholder="Luda Lanches" maxlength="40" size="40" autocomplete="off"/>
 						</label><br><br>
 						<label>
 							<p>Logo do Restaurante:</p><input type="file" id="logoImageInput" onChange="readURLLogo(this, true)" autocomplete="off"/>
@@ -313,11 +206,11 @@
 						<h3>Informações de contato</h3>
 						<br><br>
 						<label>
-							<p>Telefone</p><input type="tel" id="telefoneInput" maxlength="40" size="40" onChange="TelefoneValidation(this)" autocomplete="off"/>
+							<p>Telefone</p><input type="tel" id="telefoneInput" placeholder="51 993992523" maxlength="40" size="40" onChange="TelefoneValidation(this)" autocomplete="off"/>
 							<p class="observationInput">* Insira somente números no formato XX XXXXXXXX</p>
 						</label><br><br>
 						<label>
-							<p>E-Mail</p><input type="text" id="emailInput" maxlength="40" size="40" onChange="EmailValidation(this)" autocomplete="off"/>
+							<p>E-Mail</p><input type="text" id="emailInput" placeholder="eduarda.ssilva@hotmail.com" maxlength="40" size="40" onChange="EmailValidation(this)" autocomplete="off"/>
 						</label>
 						<br><br>
 					</div>
@@ -325,17 +218,17 @@
 						<h3>Localização</h3>
 						<br><br>
 						<label>
-							<p>CEP</p><input type="text" id="cepInput" maxlength="40" size="40" onChange="CEPValidation(this)" autocomplete="off"/>
+							<p>CEP</p><input type="text" id="cepInput" placeholder="90840-440" maxlength="40" size="40" onChange="CEPValidation(this)" autocomplete="off"/>
 							<p class="observationInput">* Insira somente números no formato XXXXXXXX</p>
 						</label><br><br>
 						<label>
-							<p>Estado</p><input type="text" id="estadoInput" maxlength="40" size="40" autocomplete="off"/>
+							<p>Estado</p><input type="text" id="estadoInput" placeholder="Rio Grande do Sul" maxlength="40" size="40" autocomplete="off"/>
 						</label><br><br>
 						<label>
-							<p>Cidade</p><input type="text" id="cidadeInput" maxlength="40" size="40" autocomplete="off"/>
+							<p>Cidade</p><input type="text" id="cidadeInput" placeholder="Porto Alegre" maxlength="40" size="40" autocomplete="off"/>
 						</label><br><br>
 						<label>
-							<p>Endereço</p><input type="text" id="enderecoInput" maxlength="40" size="40" autocomplete="off"/>
+							<p>Endereço</p><input type="text" id="enderecoInput" placeholder="Orfanotrofio, 555" maxlength="40" size="40" autocomplete="off"/>
 						</label><br><br>
 					</div>
 				</div>
@@ -345,45 +238,60 @@
 			<div id="perfilConfig"  class="tabContent">
 				<div id="divPerfil"> 
 					<h3 class="perfil" onclick="OpenSubTab(event, 'navPerfil')">Perfil</h3>
-					<h3 class="perfil activePerfil" id="perfilAlt">Alterar dados de login</h3>
+					<h3 class="perfil activePerfil" id="perfilAlt">Login</h3>
 				</div>
 				<div class="line"></div>
 				<br><br>
 				<div id="configSelection">
 					<div class="configContainer configLogin">
-						<h3>Login</h3>
+						<h3>Mudar nome de Usuário</h3>
 						<br>
 						<label>
-							<p>Username</p><input type="text" id="userInput" maxlength="40" size="40" autocomplete="off"/>
+							<p>Novo Login</p><input type="text" id="userInput" maxlength="40" size="40" autocomplete="off"/>
+						</label><br><br>
+                        <label>
+							<p>Senha</p><input type="password" id="senhaUser" maxlength="64" size="40" autocomplete="off"/><br><br>
 						</label>
 					</div>
 					<div class="configContainer configSenha">
 						<h3>Mudar a senha</h3>
 						<br>
 						<label>
-							<p>Senha antiga</p><input type="password" id="senhaAntiga" maxlength="10" size="40" autocomplete="off"/>
+							<p>Senha antiga</p><input type="password" id="senhaAntiga" maxlength="64" size="40" autocomplete="off"/>
 						</label><br><br>
 						<label>
-							<p>Nova senha</p><input type="password" id="novaSenhaInput" maxlength="10" size="40" autocomplete="off"/>
+							<p>Nova senha</p><input type="password" id="novaSenhaInput" maxlength="64" size="40" autocomplete="off"/>
 						</label><br><br>
 						<label>
-							<p id="confirmarSenhaLabel">Confirmar senha</p><input type="password" id="confirmarSenhaInput" maxlength="10" size="40" autocomplete="off"/>
+							<p id="confirmarSenhaLabel">Confirmar nova senha</p><input type="password" id="confirmarSenhaInput" maxlength="64" size="40" autocomplete="off"/>
 						</label><br><br><br><br>
 					</div>
 				</div>
 				
-				<button type="button" class="btn btn-success" id="configButton" onClick="SavePerfilChanges()">Salvar Alterações</button>
+				<button type="button" class="btn btn-success" id="configButton" onClick="SaveLoginChanges()">Salvar Alterações</button>
 			</div>
 		</div>
 		<footer>
 			<p>Rodizeira © Copyright 2020. Todos os direitos reservados</p>
 		</footer>
-        <?php
+        <!--?php
             include 'C:\wamp64\www\TCC-Rodizeira\srcRestaurant\php\startRestaurant.php';
             fillRestaurantInfo();
             fillCardapio();
             fillRodizio();
             fillEtiquetas();
-        ?>
+		?-->
+		<script> 
+			CreateDivItemCardapio('Calabresa', 'Mussarela, calabresa e cebola, oregano.', '#Carne~');
+			CreateDivItemCardapio('4 Queijos', 'Mussarela, requeijão, gorgonzola, oregano e parmesão ralado.', '#Frios~');
+			CreateDivItemCardapio('Alho e Óleo', 'Alho e óleo, salsa e parmesão', '#Legumes~');
+			CreateDivItemCardapio('Tentação', 'Chocolate preto e morangos', '#Doces~');
+			CreateTag('Carne');
+			CreateTag('Frios');
+			CreateTag('Legumes');
+			CreateTag('Doces');
+			CreateDivRodizio('Completo', '32.90', 'Rodizio completo', '#Carne~#Frios~#Legumes~#Doces~');
+			CreateDivRodizio('Vegetariano', '25.90', 'Rodizio vegetariano', '#Frios~#Legumes~#Doces~');
+		</script>
     </body>
 </html>
