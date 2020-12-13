@@ -62,7 +62,7 @@ function CreateDivItemCardapio(nameItem, descItem, tagString){
     aDelete.onclick = function() { DeleteCardapio(this, nameItem); };
     
 	if(imageItem.value == '')
-		img.src = 'img/pizzaIcon.png';
+        img.src = 'img/meatIcon.png';
 	else
 		readURLCardapio(imageItem, false, img);
 	

@@ -24,7 +24,7 @@
 		<div id=nav>
 			<div class="navBar" id="navBarID">
 				<img id="logoRestaurant" src="img/bbqLogo.png" class="logoImage" alt="Missing Logo" style="color:white"></img>
-				<p class="navHeader" id="restaurantName">Churrascaria Gado Demais</p>
+				<p class="navHeader" id="restaurantName">Gado Demais</p>
 				<section class="navDiv">
 					<a class="navButton" onclick="OpenTab(event, 'navInicio')" id="defaultOpen">Início</a>
 					<a class="navButton" onclick="OpenTab(event, 'navPedidos')">Pedidos</a>
