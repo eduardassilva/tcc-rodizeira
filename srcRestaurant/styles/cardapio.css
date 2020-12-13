@@ -1,25 +1,30 @@
 /*Cardapio*/
 #itemsCardapio{
-	/*border: 1px dotted black;/*Essa linha é só pra poder ver o tamanho da DIV, pode ser apagada*/
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 10px;
+	display: inline;
 }
 .cardapioItemDiv{
-	display:block;
-    border: 2px solid var(--black-color);
+	border: 2px solid var(--black-color);
+	margin: auto;
 	animation: fadeEffect 2s;
-	width: 100%;
+	width: 80%;
 	height: 200px;
+	margin-bottom: 15px;
+	
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgb(212, 206, 206);
 }
 
 .cardapioImg{
 	margin:8px 8px;
-	border: 1px solid var(--black-color);
+	border: 0.5px solid var(--black-color);
 	height:180px;
 	width:180px;
 	float:left;
+	border-radius: 3px;
 }
 
 .cardapioDescDiv{
@@ -35,7 +40,6 @@
 }
 
 .cardapioName{
-	/*border: 1px solid black;*/
 	position: absolute;
 	display:inline-block;
 	padding-top:2px;
@@ -55,6 +59,32 @@
 	padding: 5px 5px;
 }
 
+.cardapioDeleteDiv{
+	border-radius: 5px;
+	float: right;
+	height:5px;
+	margin-right: 8px;
+	padding-top:12px;
+	text-align: center;
+}
+
+.cardapioDeleteDiv a{
+	font-size: 14px;
+	color:white;
+	font-weight:bold;
+	word-break: break-word;
+	background-color: var(--delete-color);
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 5px;
+}
+
+.cardapioDeleteDiv a:hover{
+    color: var(--white-color);
+    cursor:pointer;
+    text-decoration: none;
+    background-color: var(--delete-hover-color);
+}
 
 /*Modal Cardapio*/
 .addCardapio{

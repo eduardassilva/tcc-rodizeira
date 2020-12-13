@@ -1,0 +1,68 @@
+#divMaisPedidos{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    height: 600px;
+}
+
+#divMaisPedidos h4{
+    padding:15px;
+    font-weight:bold;
+    color: var(--black-color);
+}
+
+#maisPedidosSemana{
+    border:0.5px solid black;
+    width: 33%;
+    max-height: 500px;
+    float: left;
+    overflow:auto;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgb(212, 206, 206);
+}
+
+#maisPedidosMes{
+    border:1px solid black;
+    margin: auto;
+    width: 33%;
+    max-height: 500px;
+    overflow:auto;
+    border-radius: 3px;
+    box-shadow: 0 0 7px rgb(212, 206, 206);
+}
+
+#maisPedidosSemestre{
+    border:1px solid black;
+    width: 33%;
+    max-height: 500px;
+    float: right;
+    overflow:auto;
+    border-radius: 3px;
+    box-shadow: 0 0 7px rgb(212, 206, 206);
+}
+
+.maisPedidosPDiv{
+    display: block;
+    border-top: 0.5px solid #d9d9d9;
+    padding-top:10px;
+    padding-right:10px;
+    padding-left:10px;
+}
+
+.maisPedidosNameClass{
+    display: inline-block;
+    font-size: 15px;
+}
+
+.maisPedidosNumClass{
+    display: inline-block;
+    float:right;
+    font-size: 15px;
+}
+
+.maisPedidosLine{
+	display: inline-block;
+	border-top: 1px solid var(--white-color);
+	width:100%;
+}

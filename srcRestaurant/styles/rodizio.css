@@ -3,19 +3,22 @@
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 10px;
+	display: inline;
 }
 
 .rodizio{
-	display:block;
-    border: 2px solid var(--black-color);
+	margin: auto;
+    border: 0.5px solid var(--black-color);
 	animation: fadeEffect 2s;
-	width: 100%;
+	width: 80%;
 	height: 180px;
+	margin-bottom: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgb(212, 206, 206);
 }
 
 .rodizioName{
-	/*border: 1px solid black;*/
-	width:30%;
+	width:25%;
 	height:6%;
 	position: absolute;
 	display:inline-block;
@@ -24,36 +27,40 @@
 	padding-top:10px;
 	padding-left:10px;
 	font-size:32px;
-	word-break: break-all;
+	word-break: break-word;
 	font-size: 20px;
 	font-weight: bold;
 }
 
 .rodizioPrice{
-	/*border: 1px solid black;*/
 	width:15%;
 	height:6%;
 	position: absolute;
 	display:inline;
-	margin-top: 5px;
-	margin-left: 35%;
+	margin-top: 8px;
+	margin-left: 25%;
 	padding-top:10px;
 	padding-left:10px;
+	font-size:32px;
 	word-break: break-all;
 	float: right;
+	overflow:auto;
 	font-size: 20px;
 }
 
 .rodizioTags{
-	margin:8px 8px;
-	border: 1px solid var(--black-color);
+	border:0.5px solid gray;
+	border-radius: 4px;
+	margin-top:8px;
+	margin-left: 8px;
 	height:90%;
-	width:30%;
+	width:20%;
 	float: right;
 	padding-left:5px;
 	padding-top:5px;
 	overflow:auto;
 	font-weight: bold;
+	margin-right: 20px;
 }
 
 .tagsRodizio{
@@ -61,14 +68,41 @@
 }
 
 .rodizioDesc{
-	border-top:0.5px solid gray;
-	height:50%;
+	border-top:0.5px solid #d9d9d9;
+	height:30%;
 	margin-top:78px;
 	margin-left:8px;
 	margin-bottom:8px;
 	overflow:auto;
 	word-break: break-word;
 	padding: 5px 5px;
+}
+
+.rodizioDeleteDiv{
+	border-radius: 5px;
+	float: right;
+	height:5px;
+	margin-right: 8px;
+	padding-top:12px;
+	text-align: center;
+}
+
+.rodizioDeleteDiv a{
+	font-size: 14px;
+	color:white;
+	font-weight:bold;
+	word-break: break-word;
+	background-color: var(--delete-color);
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 5px;
+}
+
+.rodizioDeleteDiv a:hover{
+    color: var(--white-color);
+    cursor:pointer;
+    text-decoration: none;
+    background-color: var(--delete-hover-color);
 }
 
 input[type=number]::-webkit-inner-spin-button { 
@@ -78,13 +112,21 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] { 
    -moz-appearance: textfield;
    appearance: textfield;
-
 }
 
 .imgCardapioTag{
 	width: 15px;
 }
 
-.tagLabel label{
-	margin-left: 2px;
+
+@media screen and (max-width: 700px){
+	.rodizio{
+		width: 87%;
+		height: 180px;
+	}
+	
+	.rodizioNewDiv{
+		padding-left: 5px;
+		padding-top: 6px;
+	}
 }

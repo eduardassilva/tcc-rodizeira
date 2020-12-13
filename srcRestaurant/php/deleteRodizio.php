@@ -9,19 +9,18 @@
         $conn = new PDO($dsn, $user, $pass);
         
         $resID = $_POST["resID"];
-        $tagName = $_POST["name"];
+        $rodName = $_POST["name"];
         
         if(empty($resID)){
             $resID = 0;
         }
         
-        $insert = 'INSERT 
-                    INTO etiquetas (restaurant_id
-                                  , nome_etiqueta)
-                  VALUES ('.$resID.'
-                        , "'.$tagName.'")';
+        $delete = 'DELETE 
+                     FROM rodizios
+                    WHERE restaurant_id = '.$resID.'
+                      AND nome_rodizio = "'.$rodName.'"';
                     
-        $conn->query($insert);
+        $conn->query($delete);
         
         $conn->close();
         

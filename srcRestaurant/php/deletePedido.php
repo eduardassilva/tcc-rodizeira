@@ -9,19 +9,22 @@
         $conn = new PDO($dsn, $user, $pass);
         
         $resID = $_POST["resID"];
-        $tagName = $_POST["name"];
+        $itemName = $_POST["name"];
         
         if(empty($resID)){
             $resID = 0;
         }
         
-        $insert = 'INSERT 
-                    INTO etiquetas (restaurant_id
-                                  , nome_etiqueta)
-                  VALUES ('.$resID.'
-                        , "'.$tagName.'")';
+        $delete = 'UPDATE pedidos
+                      SET aberto = 0
+                    WHERE restaurant_id = '.$resID.'
+                      AND aberto = 1
+                      AND item_id IN (SELECT item_id
+                                        FROM cardapios
+                                       WHERE nome = "'.$itemName.'")
+                    LIMIT 1';
                     
-        $conn->query($insert);
+        $conn->query($delete);
         
         $conn->close();
         

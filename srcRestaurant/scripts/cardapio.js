@@ -34,7 +34,7 @@ function NewItemCardapio(){
 
 		itemQty++;
         
-      /*InsertCardapios(nameItem, descItem, imageItem, selectedTagsString);*/
+        InsertCardapios(nameItem, descItem, imageItem, selectedTagsString);
         ClearInputsCardapio(nameItem, descItem, imageItem, selectedTags);
 	}
 }
@@ -47,16 +47,20 @@ function CreateDivItemCardapio(nameItem, descItem, tagString){
 	var img = document.createElement('img');
 	var divDesc = document.createElement('div');
 	var name = document.createElement('h');
+    var deleteDiv = document.createElement('div');
+    var aDelete = document.createElement('a');
     var divTags = document.createElement('div');
     var labelTags = document.createElement('label');
-	var breaklines = document.createElement('text');
 	
 	divItem.className = 'cardapioItemDiv';
 	img.className = 'cardapioImg';	
 	divDesc.className = 'cardapioDescDiv';
 	name.className = 'cardapioName';
+    deleteDiv.className = 'cardapioDeleteDiv';
     divTags.className = 'cardapioTag';
 	
+    aDelete.onclick = function() { DeleteCardapio(this, nameItem); };
+    
 	if(imageItem.value == '')
 		img.src = 'img/pizzaIcon.png';
 	else
@@ -66,17 +70,18 @@ function CreateDivItemCardapio(nameItem, descItem, tagString){
 		divDesc.style.borderColor = 'transparent';
 	
 	name.innerHTML = nameItem;
+    aDelete.innerHTML = 'DELETAR';
 	divDesc.innerHTML = descItem;
     labelTags.innerHTML = tagString.replaceAll('~', '\n');
-	breaklines.innerHTML = '<br>';
     
 	document.getElementById('itemsCardapio').appendChild(divItem);
 	divItem.appendChild(img);
 	divItem.appendChild(name);
+    divItem.appendChild(deleteDiv);
+    deleteDiv.appendChild(aDelete);
 	divItem.appendChild(divDesc);
     divTags.appendChild(labelTags);
     divItem.appendChild(divTags);
-	document.getElementById('itemsCardapio').appendChild(breaklines);
 }
 
 function readURLCardapio(input, isPreview, newImageCardapio) {
@@ -115,4 +120,17 @@ function InsertCardapios(nameItem, descItem, imgItem, tagString){
         type: "POST",
         data: {resID: restaurant_id, name: nameItem.value, desc: descItem.value, tags: tagString} 
     });
+}
+
+function DeleteCardapio(btn, name){
+    
+    if(confirm("Tem certeza que quer deletar este item?")){
+        btn.parentElement.parentElement.style.display = 'none';
+        
+        $.ajax({                                      
+            url: '/TCC-Rodizeira/srcRestaurant/php/deleteCardapio.php',       
+            type: "POST",
+            data: {resID: restaurant_id, name: name} 
+        });    
+    }
 }
